@@ -6,7 +6,7 @@ setup(name='google-spreadsheet-vue-i18n',
       url='https://git.j4hangir.com/py/google-spreadsheet-vue-i18n.git',
       author='j4hangir',
       author_email='j4hangir@gmail.com',
-      packages=['google-spreadsheet-vue-i18n'],
+      packages=['google_spreadsheet_vue_i18n'],
       scripts=['bin/google-spreadsheet-vue-i18n'],
       install_requires=[
           'requests',
