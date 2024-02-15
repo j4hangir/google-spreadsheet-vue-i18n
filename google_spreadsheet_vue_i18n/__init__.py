@@ -36,11 +36,11 @@ def build_object(content: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def to_json(obj: Any) -> str:
-    return json.dumps(obj, indent=2)
+    return json.dumps(obj, indent=2, ensure_ascii=False)
 
 
 def to_js(obj: Any) -> str:
-    return f'export default {json.dumps(obj, indent=2)};'
+    return f'export default {json.dumps(obj, indent=2, ensure_ascii=False)};'
 
 
 def to_ts(txt: str) -> str:
