@@ -82,8 +82,8 @@ def output(result: str, destination: str) -> None:
 
 def main():
     parser = ArgumentParser(description='Generates vue-i18n file content from google spreadsheet.')
-    parser.add_argument('--spreadsheet', required=True, help='The google spreadsheet id')
-    parser.add_argument('--sheet', required=True, help='The name of the spreadsheet\'s sheet')
+    parser.add_argument('spreadsheet', help='The google spreadsheet id')
+    parser.add_argument('--sheet', required=False, help='The name of the spreadsheet\'s sheet')
     parser.add_argument('--format', default='json', choices=['ts', 'json', 'js'], help='The output format')
     parser.add_argument('--output', default='stdout', help='The output destination (default: stdout)')
     args = parser.parse_args()
