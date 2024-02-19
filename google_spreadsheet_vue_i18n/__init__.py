@@ -55,6 +55,12 @@ def to_ts(txt: str) -> str:
     tr.append('  get_lang() {return localStorage.getItem(this._id) || "en"}')
     tr.append('  _lang: ref("")')
     tr.append('  set_lang(lang: string) {this._lang.value = lang; localStorage.setItem(this._id, lang)}')
+    tr.append('''  t(phrase: string,  ...fields) {
+    for (const field of fields)
+      for (const [k, v] of Object.entries(field))
+        phrase = phrase.replaceAll(`{${k}}`, v)
+    return phrase
+  } ''')
     txt = txt.replace('export default', 'const tr: Record<string, Record<string,string>> = ', 1)
     
     regex = r'("(?P<key>\w+)":\s)"(?P=key)"'
